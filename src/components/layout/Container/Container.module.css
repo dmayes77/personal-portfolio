@@ -1,0 +1,20 @@
+.container {
+  width: min(100% - calc(var(--page-padding-x) * 2), var(--container-width));
+  margin-inline: auto;
+}
+
+.full {
+  --container-width: var(--container-full);
+}
+
+.large {
+  --container-width: var(--container-large);
+}
+
+.medium {
+  --container-width: var(--container-medium);
+}
+
+.small {
+  --container-width: var(--container-small);
+}

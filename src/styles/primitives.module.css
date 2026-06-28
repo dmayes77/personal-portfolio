@@ -1,0 +1,49 @@
+.eyebrow {
+  color: var(--foreground);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stackLg {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.stackMd {
+  display: grid;
+  gap: 1rem;
+}
+
+.proseBlock {
+  display: grid;
+  gap: 1rem;
+}
+
+.interiorLayout {
+  display: grid;
+  gap: 1rem;
+  max-width: 48rem;
+}
+
+.lede {
+  max-width: 42rem;
+  font-size: 1.1rem;
+}
+
+.inlineLink {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.list {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.1rem;
+}
+
+.orderedList {
+  padding-left: 1.25rem;
+}

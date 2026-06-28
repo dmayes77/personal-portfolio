@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.splitSection {
+  display: grid;
+  gap: 2rem;
+}
+
+.note {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+}
+
+.noteTitle {
+  color: var(--foreground);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.frameworkNote {
+  max-width: 40rem;
+}
+
+@media (min-width: 900px) {
+  .grid,
+  .splitSection {
+    grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+    align-items: start;
+  }
+}

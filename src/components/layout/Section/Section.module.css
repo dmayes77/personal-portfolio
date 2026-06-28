@@ -1,0 +1,16 @@
+.compact {
+  padding-block: var(--section-padding-compact);
+}
+
+.default {
+  padding-block: var(--section-padding-default);
+}
+
+.roomy {
+  padding-block: var(--section-padding-roomy);
+}
+
+.subtle {
+  background: var(--background-subtle);
+  border-block: 1px solid var(--border);
+}
