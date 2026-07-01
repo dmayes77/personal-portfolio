@@ -1,0 +1,8 @@
+.prose {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.backLink {
+  margin-top: 2rem;
+}

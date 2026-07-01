@@ -1,28 +1,41 @@
 export const siteConfig = {
-  name: "Northstar",
-  title: "Northstar Site Starter",
+  name: "David Mayes",
+  title: "David Mayes — Software Developer",
   description:
-    "A minimal public-site starter for marketing sites, portfolios, studios, blogs, small business sites, editorial sites, and documentation-style projects.",
-  url: "https://example.com",
+    "Software developer focused on modern web applications, SaaS platforms, and scalable digital solutions.",
+  url: "https://davidmayes.dev",
   locale: "en-US",
-  ogImageTitle: "Northstar",
-  ogImageSubtitle:
-    "A minimal public-site starter for a wide range of non-SaaS projects.",
+  ogImageTitle: "David Mayes",
+  ogImageSubtitle: "Software Developer",
   nav: [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/projects", label: "Projects" },
+    { href: "/resume", label: "Resume" },
     { href: "/contact", label: "Contact" },
   ],
   headerCta: {
     href: "/contact",
     label: "Get in touch",
   },
-  contactEmail: "hello@example.com",
+  contactEmail: "dmayes77@gmail.com",
+  footerLinks: [
+    { label: "GitHub", href: "https://github.com/dmayes77", external: true },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/davidmayes",
+      external: true,
+    },
+    { label: "Resume", href: "/resume", external: false },
+    { label: "Contact", href: "/contact", external: false },
+  ],
 };
 
 export const staticRoutes = [
   { href: "/", priority: 1, changeFrequency: "monthly" },
   { href: "/about", priority: 0.8, changeFrequency: "monthly" },
+  { href: "/projects", priority: 0.9, changeFrequency: "weekly" },
+  { href: "/resume", priority: 0.8, changeFrequency: "monthly" },
   { href: "/contact", priority: 0.7, changeFrequency: "yearly" },
 ];
 

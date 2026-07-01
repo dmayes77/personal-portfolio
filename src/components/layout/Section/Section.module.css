@@ -10,6 +10,10 @@
   padding-block: var(--section-padding-roomy);
 }
 
+.hero {
+  padding-block: 0;
+}
+
 .subtle {
   background: var(--background-subtle);
   border-block: 1px solid var(--border);

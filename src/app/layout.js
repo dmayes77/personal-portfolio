@@ -1,7 +1,9 @@
 import "./globals.css";
-import "../styles/site.css";
-import SiteFooter from "@/components/layout/SiteFooter";
-import SiteHeader from "@/components/layout/SiteHeader";
+import "@/styles/tokens.css";
+import "@/styles/typography.css";
+import "@/styles/animations.css";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import ThemeProvider from "@/components/ThemeProvider";
 import { absoluteUrl, siteConfig } from "@/lib/constants";
 
@@ -45,9 +47,9 @@ export default function RootLayout({ children }) {
       <body>
         <ThemeProvider>
           <div className="site-shell">
-            <SiteHeader />
+            <Header />
             {children}
-            <SiteFooter />
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

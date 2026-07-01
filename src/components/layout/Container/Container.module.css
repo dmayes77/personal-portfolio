@@ -3,6 +3,12 @@
   margin-inline: auto;
 }
 
+.hero {
+  width: 100%;
+  max-width: none;
+  padding-inline: 0;
+}
+
 .full {
   --container-width: var(--container-full);
 }

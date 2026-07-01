@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+  --background: #f3f7ff;
+  --background-subtle: #eaf1ff;
+  --surface: rgba(255, 255, 255, 0.84);
+  --surface-strong: rgba(255, 255, 255, 0.96);
+  --foreground: #08152e;
+  --muted-foreground: #445776;
+  --border: rgba(8, 21, 46, 0.12);
+  --accent: #1f63ff;
+  --accent-strong: #0e4ed8;
+  --accent-soft: rgba(31, 99, 255, 0.12);
+  --accent-foreground: #ffffff;
+  --spotlight: rgba(31, 99, 255, 0.18);
+  --shadow-soft: 0 24px 70px rgba(24, 57, 117, 0.08);
+  --shadow-card: 0 16px 40px rgba(18, 46, 96, 0.12);
+  --nav-height: 5rem;
+  --page-padding-x: 1rem;
+  --container-full: 90rem;
+  --container-large: 72rem;
+  --container-medium: 60rem;
+  --container-small: 48rem;
+  --section-padding-compact: 3rem;
+  --section-padding-default: 4rem;
+  --section-padding-roomy: 5.5rem;
+  --font-sans: "Avenir Next Condensed", "Avenir Next", "Segoe UI", sans-serif;
+  --font-ui: "Avenir Next", "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", "Consolas", monospace;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #050b17;
+  --background-subtle: #091224;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --foreground: #f6f9ff;
+  --muted-foreground: #b8c7e6;
+  --border: rgba(246, 249, 255, 0.12);
+  --accent: #4d86ff;
+  --accent-strong: #74a4ff;
+  --accent-soft: rgba(77, 134, 255, 0.2);
+  --accent-foreground: #031127;
+  --spotlight: rgba(77, 134, 255, 0.2);
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.28);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 5.5rem;
+    --page-padding-x: 1.5rem;
+    --section-padding-compact: 3.5rem;
+    --section-padding-default: 5rem;
+    --section-padding-roomy: 6.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-padding-x: 2rem;
+    --section-padding-compact: 4rem;
+    --section-padding-default: 5.5rem;
+    --section-padding-roomy: 7.5rem;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+}

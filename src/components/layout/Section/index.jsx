@@ -5,6 +5,7 @@ const sectionVariants = cva(null, {
   variants: {
     variant: {
       default: null,
+      hero: styles.hero,
       subtle: styles.subtle,
     },
     spacing: {

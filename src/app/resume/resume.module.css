@@ -1,0 +1,27 @@
+.skillGroups {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.skillGroup h3 {
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--foreground);
+}
+
+.cta {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.cta p {
+  color: var(--muted-foreground);
+  font-size: 1.05rem;
+}
+
+@media (min-width: 700px) {
+  .skillGroups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

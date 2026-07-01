@@ -5,6 +5,7 @@ const containerVariants = cva(styles.container, {
   variants: {
     variant: {
       full: styles.full,
+      hero: styles.hero,
       large: styles.large,
       medium: styles.medium,
       small: styles.small,
