@@ -94,22 +94,37 @@
 .techRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 1.1rem;
 }
 
-.techBadge {
+.heroTechItem {
+  display: grid;
+  justify-items: center;
+  gap: 0.4rem;
+  width: 4rem;
+}
+
+.heroTechIconWrap {
   display: inline-flex;
+  width: 2.6rem;
+  height: 2.6rem;
   align-items: center;
   justify-content: center;
-  min-height: 2.5rem;
-  padding: 0.55rem 0.9rem;
-  border: 1px solid rgba(111, 151, 255, 0.22);
-  border-radius: 999px;
+  border-radius: 50%;
   background: rgba(7, 14, 30, 0.66);
-  color: #f7faff;
-  font-size: 0.88rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22), inset 0 0 0 1px rgba(111, 151, 255, 0.22);
+}
+
+.heroTechIconWrap svg {
+  width: 68%;
+  height: 68%;
+}
+
+.heroTechLabel {
+  font-size: 0.72rem;
   font-weight: 600;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+  color: rgba(226, 235, 255, 0.78);
+  text-align: center;
 }
 
 .timelineStep h2,

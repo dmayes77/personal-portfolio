@@ -3,6 +3,7 @@ import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button";
 import ButtonGroup from "@/components/ui/ButtonGroup";
 import Icon from "@/components/ui/Icon";
+import TechIcon from "@/components/ui/TechIcon";
 import { siteConfig, socialLinks } from "@/lib/constants";
 import { featuredProjects } from "@/content/projects";
 import { skills } from "@/content/skills";
@@ -168,9 +169,12 @@ export default function Home() {
 
               <div className={styles.techRow} aria-label="Core technologies">
                 {heroTech.map((item) => (
-                  <span key={item} className={styles.techBadge}>
-                    {item}
-                  </span>
+                  <div key={item} className={styles.heroTechItem}>
+                    <span className={styles.heroTechIconWrap}>
+                      <TechIcon name={item} />
+                    </span>
+                    <span className={styles.heroTechLabel}>{item}</span>
+                  </div>
                 ))}
               </div>
 
