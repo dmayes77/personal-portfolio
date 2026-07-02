@@ -6,6 +6,11 @@ import { siteConfig } from "@/lib/constants";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
+const initials = siteConfig.name
+  .split(" ")
+  .map((word) => word[0])
+  .join("");
+
 export default function Header() {
   return (
     <header className={styles.header}>
@@ -18,7 +23,10 @@ export default function Header() {
           href="/"
           aria-label={`${siteConfig.name} — home`}
         >
-          {siteConfig.name}
+          <span className={styles.brandMonogram} aria-hidden="true">
+            {initials}
+          </span>
+          <span className={styles.brandName}>{siteConfig.name}</span>
         </Link>
 
         <Navigation />

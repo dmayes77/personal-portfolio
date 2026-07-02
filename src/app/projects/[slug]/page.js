@@ -122,7 +122,7 @@ export default async function ProjectPage({ params }) {
           </div>
 
           <p className={styles.backLink}>
-            <Link href="/projects" className={primitives.inlineLink}>
+            <Link href="/#featured-projects" className={primitives.inlineLink}>
               ← Back to all projects
             </Link>
           </p>

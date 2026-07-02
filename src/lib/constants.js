@@ -9,8 +9,7 @@ export const siteConfig = {
   ogImageSubtitle: "Software Developer",
   nav: [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
+    { href: "/#featured-projects", label: "Projects" },
     { href: "/resume", label: "Resume" },
     { href: "/contact", label: "Contact" },
   ],
@@ -19,6 +18,7 @@ export const siteConfig = {
     label: "Get in touch",
   },
   contactEmail: "dmayes77@gmail.com",
+  location: "Chattanooga, TN",
   footerLinks: [
     { label: "GitHub", href: "https://github.com/dmayes77", external: true },
     {
@@ -31,10 +31,30 @@ export const siteConfig = {
   ],
 };
 
+const socialIconByLabel = {
+  GitHub: "github",
+  LinkedIn: "linkedin",
+};
+
+export const socialLinks = [
+  {
+    label: "Email",
+    value: siteConfig.contactEmail,
+    href: `mailto:${siteConfig.contactEmail}`,
+    icon: "mail",
+  },
+  ...siteConfig.footerLinks
+    .filter((link) => socialIconByLabel[link.label])
+    .map((link) => ({
+      label: link.label,
+      value: link.href.replace(/^https?:\/\/(www\.)?/, ""),
+      href: link.href,
+      icon: socialIconByLabel[link.label],
+    })),
+];
+
 export const staticRoutes = [
   { href: "/", priority: 1, changeFrequency: "monthly" },
-  { href: "/about", priority: 0.8, changeFrequency: "monthly" },
-  { href: "/projects", priority: 0.9, changeFrequency: "weekly" },
   { href: "/resume", priority: 0.8, changeFrequency: "monthly" },
   { href: "/contact", priority: 0.7, changeFrequency: "yearly" },
 ];

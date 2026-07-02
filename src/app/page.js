@@ -3,6 +3,7 @@ import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button";
 import ButtonGroup from "@/components/ui/ButtonGroup";
 import Icon from "@/components/ui/Icon";
+import { siteConfig, socialLinks } from "@/lib/constants";
 import { featuredProjects } from "@/content/projects";
 import { skills } from "@/content/skills";
 import Image from "next/image";
@@ -76,6 +77,57 @@ const processSteps = [
   },
 ];
 
+const profilePoints = [
+  "Full-stack software engineer",
+  "10+ years building web applications",
+  "15+ years leading teams and operations",
+  "Passionate about scalable SaaS products",
+  `Based in ${siteConfig.location}`,
+];
+
+const philosophyPoints = [
+  "Understand the business problem",
+  "Design intuitive experiences",
+  "Build maintainable systems",
+  "Deliver measurable value",
+  "Continuously improve",
+];
+
+const strengths = [
+  {
+    title: "Problem Solver",
+    body: "I turn complex challenges into practical, high-impact software solutions.",
+  },
+  {
+    title: "Collaborative Leader",
+    body: "I work closely with teams and stakeholders to move ideas into production.",
+  },
+  {
+    title: "Results Driven",
+    body: "I focus on software that serves users, supports growth, and creates value.",
+  },
+];
+
+const leadershipPoints = [
+  "Led manufacturing teams and operations",
+  "Managed multi-million dollar P&L responsibility",
+  "Improved processes, quality, and efficiency",
+  "Worked across functions to align teams and execution",
+  "Coached, mentored, and developed people",
+  "Delivered operational excellence with accountability",
+];
+
+const principles = [
+  "User First",
+  "Performance Matters",
+  "Clean Architecture",
+  "Accessibility",
+  "Scalability",
+  "Maintainability",
+  "Collaboration",
+  "Continuous Learning",
+];
+
 export const metadata = {
   title: {
     absolute: "David Mayes — Software Developer",
@@ -139,7 +191,7 @@ export default function Home() {
 
               <ButtonGroup>
                 <Button asChild size="lg">
-                  <Link href="/projects">View Projects</Link>
+                  <Link href="/#featured-projects">View Projects</Link>
                 </Button>
                 <Button asChild variant="secondary" size="lg">
                   <Link href="/contact">Let&apos;s Connect</Link>
@@ -190,27 +242,80 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section id="tech" spacing="compact" className={styles.lightSection}>
+      <Section id="profile" spacing="roomy" className={styles.lightSection}>
         <Container variant="large">
-          <div className={styles.bandCard}>
-            <div className={styles.bandHeader}>
-              <p>Core Technologies</p>
-            </div>
-            <div className={styles.skillGroups}>
-              {skills.map((group) => (
-                <div key={group.category} className={styles.skillGroup}>
-                  <h3>{group.category}</h3>
-                  <div className={styles.techGrid}>
-                    {group.items.map((item) => (
-                      <span key={item} className={styles.techItem}>
-                        <span className={styles.techDot} aria-hidden="true" />
-                        {item}
-                      </span>
-                    ))}
+          <div className={styles.profileGrid}>
+            <article className={styles.infoCard}>
+              <div className={styles.cardHeading}>
+                <h2>Who I Am</h2>
+              </div>
+              <ul className={styles.checkList} role="list">
+                {profilePoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+
+              <div className={styles.cardDivider} />
+
+              <div className={styles.cardHeading}>
+                <h2>My Development Philosophy</h2>
+              </div>
+              <ul className={styles.checkList} role="list">
+                {philosophyPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className={styles.infoCard}>
+              <div className={styles.cardHeading}>
+                <h2>About Me</h2>
+              </div>
+              <div className={styles.aboutCopy}>
+                <p>
+                  I build software that solves real business problems through
+                  thoughtful architecture, clean design, and scalable
+                  engineering.
+                </p>
+                <p>
+                  My background in leadership and operations shapes how I
+                  approach development: think strategically, communicate
+                  clearly, and deliver solutions that make an impact.
+                </p>
+              </div>
+
+              <div className={styles.cardDivider} />
+
+              <div className={styles.strengthGrid}>
+                {strengths.map((strength) => (
+                  <article key={strength.title} className={styles.strengthCard}>
+                    <h3>{strength.title}</h3>
+                    <p>{strength.body}</p>
+                  </article>
+                ))}
+              </div>
+            </article>
+
+            <article className={styles.infoCard}>
+              <div className={styles.cardHeading}>
+                <h2>Core Technologies</h2>
+              </div>
+              <div className={styles.skillGroups}>
+                {skills.map((group) => (
+                  <div key={group.category} className={styles.skillGroup}>
+                    <h3>{group.category}</h3>
+                    <div className={styles.techGrid}>
+                      {group.items.map((item) => (
+                        <span key={item} className={styles.techItem}>
+                          <span className={styles.techDot} aria-hidden="true" />
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </article>
           </div>
         </Container>
       </Section>
@@ -236,58 +341,114 @@ export default function Home() {
 
       <Section id="featured-projects" spacing="compact" className={styles.lightSection}>
         <Container variant="large">
-          <div className={styles.bandCard}>
-            <div className={styles.bandHeader}>
-              <p>Featured Projects</p>
+          <div className={styles.splitRow}>
+            <div className={styles.bandCard}>
+              <div className={styles.bandHeader}>
+                <p>Featured Projects</p>
+              </div>
+              <div className={styles.projectGrid}>
+                {featuredProjects.map((project) => (
+                  <article key={project.slug} className={styles.projectCard}>
+                    <div className={styles.projectMeta}>
+                      <span>{project.category}</span>
+                      <span>{project.year}</span>
+                    </div>
+                    <h2>{project.title}</h2>
+                    <p>{project.tagline}</p>
+                    <div className={styles.projectTags}>
+                      {project.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
+                    <Link href={`/projects/${project.slug}`} className={styles.projectLink}>
+                      View Project
+                    </Link>
+                  </article>
+                ))}
+              </div>
             </div>
-            <div className={styles.projectGrid}>
-              {featuredProjects.map((project) => (
-                <article key={project.slug} className={styles.projectCard}>
-                  <div className={styles.projectMeta}>
-                    <span>{project.category}</span>
-                    <span>{project.year}</span>
-                  </div>
-                  <h2>{project.title}</h2>
-                  <p>{project.tagline}</p>
-                  <div className={styles.projectTags}>
-                    {project.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                  <Link href={`/projects/${project.slug}`} className={styles.projectLink}>
-                    View Project
-                  </Link>
-                </article>
-              ))}
+
+            <div className={styles.bandCard}>
+              <div className={styles.bandHeader}>
+                <p>Leadership Experience</p>
+              </div>
+              <ul className={styles.checkList} role="list">
+                {leadershipPoints.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <p className={styles.leadershipSummary}>
+                My background in leadership strengthens how I approach
+                software development. I communicate clearly, solve problems
+                systematically, and keep delivery aligned with business
+                goals.
+              </p>
             </div>
           </div>
         </Container>
       </Section>
 
       <Section id="closing" spacing="compact" className={styles.lightSection}>
-        <Container variant="medium">
-          <div className={styles.closingCard}>
-            <div className={styles.bandHeader}>
-              <p>Why Hire Me?</p>
-            </div>
-            <p className={styles.whyHireCopy}>
-              I combine leadership experience with modern software engineering
-              to build applications that are reliable, scalable, and focused
-              on solving real business problems. I care about the details, the
-              people, and the impact.
-            </p>
-            <ButtonGroup>
-              <Button asChild size="lg">
-                <Link href="/contact">Let&apos;s Connect</Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg">
-                <Link href="/about">More About Me</Link>
-              </Button>
-            </ButtonGroup>
+        <Container variant="large">
+          <div className={styles.bottomGrid}>
+            <article className={styles.bandCard}>
+              <div className={styles.bandHeader}>
+                <p>Principles I Build By</p>
+              </div>
+              <div className={styles.principleGrid}>
+                {principles.map((principle) => (
+                  <span key={principle} className={styles.principlePill}>
+                    {principle}
+                  </span>
+                ))}
+              </div>
+            </article>
+
+            <article className={styles.bandCard}>
+              <div className={styles.bandHeader}>
+                <p>Why Hire Me?</p>
+              </div>
+              <p className={styles.whyHireCopy}>
+                I combine leadership experience with modern software
+                engineering to build applications that are reliable,
+                scalable, and focused on solving real business problems. I
+                care about the details, the people, and the impact.
+              </p>
+              <ButtonGroup>
+                <Button asChild size="lg">
+                  <Link href="/contact">Let&apos;s Connect</Link>
+                </Button>
+              </ButtonGroup>
+            </article>
+
+            <article className={styles.bandCard}>
+              <div className={styles.bandHeader}>
+                <p>Let&apos;s Connect</p>
+              </div>
+              <div className={styles.contactList}>
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className={styles.contactItem}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    <span className={styles.contactIcon}>
+                      <Icon name={item.icon} />
+                    </span>
+                    <span>
+                      <strong>{item.label}</strong>
+                      <em>{item.value}</em>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </article>
           </div>
 
           <div className={styles.statusBar}>
-            <span>Chattanooga, TN</span>
+            <span>{siteConfig.location}</span>
             <span>Available for full-time opportunities</span>
             <span>Open to remote or relocation</span>
           </div>

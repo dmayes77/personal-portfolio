@@ -3,7 +3,7 @@ import PageHero from "@/components/layout/PageHero";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
-import { siteConfig } from "@/lib/constants";
+import { siteConfig, socialLinks } from "@/lib/constants";
 import primitives from "@/styles/primitives.module.css";
 import { submitContactForm } from "./actions";
 import styles from "./contact.module.css";
@@ -13,28 +13,6 @@ export const metadata = {
   description:
     "Get in touch with David Mayes about full-time roles, contract work, or collaboration.",
 };
-
-const socialIconByLabel = {
-  GitHub: "github",
-  LinkedIn: "linkedin",
-};
-
-const contactLinks = [
-  {
-    label: "Email",
-    value: siteConfig.contactEmail,
-    href: `mailto:${siteConfig.contactEmail}`,
-    icon: "mail",
-  },
-  ...siteConfig.footerLinks
-    .filter((link) => socialIconByLabel[link.label])
-    .map((link) => ({
-      label: link.label,
-      value: link.href.replace(/^https?:\/\/(www\.)?/, ""),
-      href: link.href,
-      icon: socialIconByLabel[link.label],
-    })),
-];
 
 export default async function ContactPage({ searchParams }) {
   const { status } = await searchParams;
@@ -90,7 +68,7 @@ export default async function ContactPage({ searchParams }) {
                 <h2>Let&apos;s connect</h2>
               </div>
               <div className={styles.contactList}>
-                {contactLinks.map((item) => (
+                {socialLinks.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
@@ -109,7 +87,7 @@ export default async function ContactPage({ searchParams }) {
                 ))}
               </div>
               <p className={styles.location}>
-                Chattanooga, TN — available for remote or relocation.
+                {siteConfig.location} — available for remote or relocation.
               </p>
             </article>
           </div>

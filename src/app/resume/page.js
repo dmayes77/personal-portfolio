@@ -2,6 +2,7 @@ import Container from "@/components/layout/Container";
 import PageHero from "@/components/layout/PageHero";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button";
+import ButtonGroup from "@/components/ui/ButtonGroup";
 import { skills } from "@/content/skills";
 import primitives from "@/styles/primitives.module.css";
 import Link from "next/link";
@@ -41,7 +42,18 @@ export default function ResumePage() {
         kicker="Background"
         title="Resume"
         lede="Full-stack software engineer with 15+ years in leadership and operations, and 10+ years building modern web applications."
-      />
+      >
+        <ButtonGroup>
+          <Button asChild size="lg">
+            <a href="/david-mayes-infographic.png" download>
+              Download One-Page Resume
+            </a>
+          </Button>
+          <Button asChild variant="secondary" size="lg">
+            <Link href="/contact">Get in touch</Link>
+          </Button>
+        </ButtonGroup>
+      </PageHero>
 
       <Section id="resume-skills" spacing="roomy">
         <Container variant="large">
@@ -100,9 +112,7 @@ export default function ResumePage() {
       <Section id="resume-cta" spacing="compact" variant="subtle">
         <Container variant="medium">
           <div className={styles.cta}>
-            <p>
-              Want the full work history, references, or a formatted copy?
-            </p>
+            <p>Want the full work history or references?</p>
             <Button asChild size="lg">
               <Link href="/contact">Get in touch</Link>
             </Button>
