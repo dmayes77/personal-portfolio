@@ -140,7 +140,7 @@ export default function Home() {
   return (
     <main id="main-content" className={styles.page}>
       <Section id="hero" variant="hero" className={styles.heroSection}>
-        <Container variant="large">
+        <Container variant="hero">
           <div className={styles.heroShell}>
             <div className={styles.codeTexture} aria-hidden="true">
               <span>export default function Hero() {"{"}</span>
@@ -172,21 +172,6 @@ export default function Home() {
                     {item}
                   </span>
                 ))}
-              </div>
-
-              <div className={styles.processPreview}>
-                <div className={styles.processHeader}>
-                  <span>My Process</span>
-                </div>
-                <div className={styles.processGrid}>
-                  {processSteps.slice(0, 4).map((step) => (
-                    <article key={step.number} className={styles.processCard}>
-                      <span className={styles.processNumber}>{step.number}</span>
-                      <h2>{step.title}</h2>
-                      <p>{step.body}</p>
-                    </article>
-                  ))}
-                </div>
               </div>
 
               <ButtonGroup>
