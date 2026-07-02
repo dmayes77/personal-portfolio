@@ -23,7 +23,7 @@ export const siteConfig = {
     { label: "GitHub", href: "https://github.com/dmayes77", external: true },
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/davidmayes",
+      href: "https://www.linkedin.com/in/davidamayes",
       external: true,
     },
     { label: "Resume", href: "/resume", external: false },

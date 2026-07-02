@@ -14,6 +14,11 @@ export const metadata = {
     "Get in touch with David Mayes about full-time roles, contract work, or collaboration.",
 };
 
+const socialIconByLabel = {
+  GitHub: "github",
+  LinkedIn: "linkedin",
+};
+
 const contactLinks = [
   {
     label: "Email",
@@ -21,18 +26,14 @@ const contactLinks = [
     href: `mailto:${siteConfig.contactEmail}`,
     icon: "mail",
   },
-  {
-    label: "GitHub",
-    value: "github.com/dmayes77",
-    href: "https://github.com/dmayes77",
-    icon: "github",
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/davidmayes",
-    href: "https://www.linkedin.com/in/davidmayes",
-    icon: "linkedin",
-  },
+  ...siteConfig.footerLinks
+    .filter((link) => socialIconByLabel[link.label])
+    .map((link) => ({
+      label: link.label,
+      value: link.href.replace(/^https?:\/\/(www\.)?/, ""),
+      href: link.href,
+      icon: socialIconByLabel[link.label],
+    })),
 ];
 
 export default async function ContactPage({ searchParams }) {
