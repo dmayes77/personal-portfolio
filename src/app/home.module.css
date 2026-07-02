@@ -163,10 +163,19 @@
   line-height: 1.05;
 }
 
-.processCard p,
-.timelineStep p {
+.processCard h2 {
+  color: #ffffff;
+}
+
+.processCard p {
   color: rgba(226, 235, 255, 0.76);
   line-height: 1.65;
+}
+
+.timelineStep p {
+  color: #4a5b7d;
+  line-height: 1.6;
+  font-size: 0.92rem;
 }
 
 .heroVisual {
@@ -325,34 +334,48 @@
   line-height: 1.72;
 }
 
-.techGrid {
+.skillGroups {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem 1rem;
+  gap: 1.1rem;
+}
+
+.skillGroup h3 {
+  margin-bottom: 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #4a5b7d;
+}
+
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .techItem {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
-  min-height: 2.6rem;
-  color: #1f2f4c;
-  font-weight: 500;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #1b3f9e;
+  font-size: 0.86rem;
+  font-weight: 600;
 }
 
 .techDot {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 999px;
   background: linear-gradient(135deg, #2f6fff, #7ac4ff);
-  box-shadow: 0 0 0 0.22rem rgba(47, 111, 255, 0.12);
   flex-shrink: 0;
 }
 
 .timeline,
-.projectGrid,
-.principleGrid,
-.contactList {
+.projectGrid {
   display: grid;
   gap: 1rem;
 }
@@ -360,6 +383,10 @@
 .timelineStep {
   display: grid;
   gap: 0.5rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(12, 28, 64, 0.1);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #ffffff, #f7faff);
 }
 
 .timelineNumber {
@@ -440,7 +467,8 @@
 
 @media (min-width: 700px) {
   .processGrid,
-  .projectGrid {
+  .projectGrid,
+  .skillGroups {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

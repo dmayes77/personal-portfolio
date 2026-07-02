@@ -76,11 +76,6 @@ const processSteps = [
   },
 ];
 
-const techItems = [
-  ...skills.flatMap((group) => group.items),
-  "PostgreSQL",
-].filter((item, index, all) => all.indexOf(item) === index);
-
 export const metadata = {
   title: {
     absolute: "David Mayes — Software Developer",
@@ -156,10 +151,10 @@ export default function Home() {
               <div className={styles.portraitWrap}>
                 <div className={styles.portraitGlow} aria-hidden="true" />
                 <Image
-                  src="/david-mayes.png"
+                  src="/david-mayes-headshot.png"
                   alt="Portrait of David Mayes"
-                  width={760}
-                  height={980}
+                  width={880}
+                  height={910}
                   className={styles.portrait}
                   priority
                 />
@@ -195,17 +190,24 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section id="tech" spacing="roomy" className={styles.lightSection}>
+      <Section id="tech" spacing="compact" className={styles.lightSection}>
         <Container variant="large">
           <div className={styles.bandCard}>
             <div className={styles.bandHeader}>
               <p>Core Technologies</p>
             </div>
-            <div className={styles.techGrid}>
-              {techItems.map((item) => (
-                <div key={item} className={styles.techItem}>
-                  <span className={styles.techDot} aria-hidden="true" />
-                  <span>{item}</span>
+            <div className={styles.skillGroups}>
+              {skills.map((group) => (
+                <div key={group.category} className={styles.skillGroup}>
+                  <h3>{group.category}</h3>
+                  <div className={styles.techGrid}>
+                    {group.items.map((item) => (
+                      <span key={item} className={styles.techItem}>
+                        <span className={styles.techDot} aria-hidden="true" />
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
