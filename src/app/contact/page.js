@@ -11,7 +11,7 @@ import styles from "./contact.module.css";
 export const metadata = {
   title: "Contact",
   description:
-    "Get in touch with David Mayes about full-time roles, contract work, or collaboration.",
+    "Get in touch with David Mayes about full-time remote product engineering roles.",
 };
 
 export default async function ContactPage({ searchParams }) {
@@ -23,7 +23,7 @@ export default async function ContactPage({ searchParams }) {
         id="contact-hero"
         kicker="Contact"
         title="Get in touch"
-        lede="Open to full-time roles, contract engagements, and conversations about SaaS architecture and product engineering."
+        lede="Open to full-time remote roles and conversations about SaaS, product engineering, and building software that solves real business problems."
       />
 
       <Section id="contact-body" spacing="roomy">
@@ -87,7 +87,7 @@ export default async function ContactPage({ searchParams }) {
                 ))}
               </div>
               <p className={styles.location}>
-                {siteConfig.location} — available for remote or relocation.
+                {siteConfig.location} — available for full-time remote opportunities.
               </p>
             </article>
           </div>

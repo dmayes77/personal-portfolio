@@ -43,7 +43,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="dark h-full scroll-smooth"
+      suppressHydrationWarning
+    >
       <body>
         <ThemeProvider>
           <div className="site-shell">

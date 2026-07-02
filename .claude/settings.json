@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/davidmayes/Developer/Active/personal-portfolio/public/david-mayes-infographic.png\")",
+      "Bash(git show *)"
+    ]
+  }
+}

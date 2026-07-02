@@ -9,7 +9,6 @@ export const siteConfig = {
   ogImageSubtitle: "Software Developer",
   nav: [
     { href: "/", label: "Home" },
-    { href: "/#featured-projects", label: "Projects" },
     { href: "/resume", label: "Resume" },
     { href: "/contact", label: "Contact" },
   ],

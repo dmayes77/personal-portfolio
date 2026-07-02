@@ -12,7 +12,7 @@ export default function ThemeToggle() {
     () => false,
   );
 
-  const activeTheme = mounted ? resolvedTheme : "light";
+  const activeTheme = mounted ? resolvedTheme : "dark";
   const isDark = activeTheme === "dark";
 
   return (

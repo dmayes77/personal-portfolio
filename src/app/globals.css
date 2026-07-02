@@ -19,6 +19,10 @@ html {
 body {
   min-height: 100vh;
   text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--spotlight) 60%, transparent), transparent 34%),
+    linear-gradient(180deg, var(--background), var(--background-subtle));
+  color: var(--foreground);
 }
 
 img,
