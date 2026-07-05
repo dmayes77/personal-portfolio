@@ -5,10 +5,9 @@
 | Layer | Directory | Purpose |
 |---|---|---|
 | Layout | `components/layout/` | Structural, shell-level: Container, Section, Header, Footer, Navigation |
-| Sections | `components/sections/` | Portfolio-specific compositions: Hero, FeaturedProjects, etc. |
-| Project | `components/project/` | Case study components: ProjectCard, ProjectHero, TechStack, etc. |
-| UI | `components/ui/` | Reusable primitives: Button, Card, Badge, Input, etc. |
-| Icons | `components/icons/` | SVG icon components |
+| Home | `components/home/` | Home page compositions and home-only layout/styling |
+| UI | `components/ui/` | Reusable primitives: Button, Card, Icon, Pill, Stack, ThemeToggle, etc. |
+| Icon sources | `components/ui/Icon/` | Data registries for UI icons and brand icons |
 
 ## File Structure
 
@@ -23,6 +22,26 @@ components/ui/Button/
 - `index.jsx` is always the entry point
 - The CSS Module is named after the component, not `styles.module.css`
 - No barrel exports (`index.js` re-exporting everything) — import directly
+
+## File Extensions
+
+- Use `.jsx` for anything that renders JSX
+- Use `.js` for non-rendering modules such as:
+  - actions
+  - content/data
+  - constants
+  - utilities
+  - registries
+  - metadata config
+
+Examples:
+
+```text
+src/app/contact/page.jsx
+src/app/contact/actions.js
+src/components/ui/Icon/index.jsx
+src/components/ui/Icon/ui-icons.js
+```
 
 ## Variant System
 
@@ -68,6 +87,25 @@ Keep client components as small and leaf-level as possible.
 - No Tailwind utility classes inside CSS Modules
 - Use `color-mix()` for hover/surface variants rather than separate token values
 - Add `:focus-visible` styles on every interactive element
+
+## Styling Ownership
+
+- Global concerns live in `src/app/globals.css` and `src/styles/*`
+- Primitive/component styles live beside the component
+- Route-only styles live beside the route
+- Home page styling is split intentionally:
+  - `components/home/common.module.css` for truly shared section patterns
+  - section-local CSS Modules for section-specific concerns
+
+Avoid recreating a catch-all shared stylesheet once styles have clear owners.
+
+## Icons
+
+- `Icon` is the primitive API
+- Raw icon definitions do not live inside `Icon/index.jsx`
+- Keep icon sources in registry/data files under `components/ui/Icon/`
+- `ui-icons.js` and `brand-icons.js` should stay data-only so they can remain `.js`
+- Let the primitive own rendering rules such as `size`, `tone`, `label`, `color`, and `stroke`
 
 ## Naming
 

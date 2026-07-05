@@ -1,17 +1,20 @@
 import Container from "@/components/layout/Container";
 import Navigation from "@/components/layout/Navigation";
-import ThemeToggle from "@/components/ThemeToggle";
-import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import ResumePrompt from "@/components/layout/Header/ResumePrompt";
 import { siteConfig } from "@/lib/constants";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
-const initials = siteConfig.name
-  .split(" ")
-  .map((word) => word[0])
-  .join("");
-
 export default function Header() {
+  const headerActionIcons = {
+    GitHub: "github",
+    LinkedIn: "linkedin",
+    Resume: "fileText",
+    Contact: "mail",
+  };
+
   return (
     <header className={styles.header}>
       <a href="#main-content" className={styles.skipLink}>
@@ -20,23 +23,33 @@ export default function Header() {
       <Container className={styles.inner} variant="large">
         <Link
           className={styles.brandMark}
-          href="/"
+          href="/#hero"
           aria-label={`${siteConfig.name} — home`}
         >
-          <span className={styles.brandMonogram} aria-hidden="true">
-            {initials}
-          </span>
-          <span className={styles.brandName}>{siteConfig.name}</span>
+          {siteConfig.name}
         </Link>
 
         <Navigation />
 
         <div className={styles.actions}>
-          <Button asChild className={styles.cta} size="sm">
-            <Link href={siteConfig.headerCta.href}>
-              {siteConfig.headerCta.label}
-            </Link>
-          </Button>
+          <nav className={styles.actionRail} aria-label="Profile links">
+            {siteConfig.headerActions.map((item) =>
+              item.label === "Resume" ? (
+                <ResumePrompt key={item.label} />
+              ) : (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={styles.actionIcon}
+                  aria-label={item.label}
+                  data-tooltip={item.label}
+                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  <Icon name={headerActionIcons[item.label]} />
+                </Link>
+              )
+            )}
+          </nav>
           <ThemeToggle />
         </div>
       </Container>

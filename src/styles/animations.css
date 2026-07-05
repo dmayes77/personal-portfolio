@@ -1,12 +1,60 @@
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(var(--fade-distance));
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--fade-distance) * -1));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -17,7 +65,17 @@
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: translateY(calc(var(--float-distance) * -1));
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -32,21 +90,83 @@
   }
 }
 
-.revealUp {
-  animation: fade-up 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+.animateFadeUp {
+  animation: fade-up var(--duration-slow) var(--ease-standard) both;
 }
 
-.drift {
+.animateFadeDown {
+  animation: fade-down var(--duration-slow) var(--ease-standard) both;
+}
+
+.animateFadeLeft {
+  animation: fade-left var(--duration-slow) var(--ease-standard) both;
+}
+
+.animateFadeRight {
+  animation: fade-right var(--duration-slow) var(--ease-standard) both;
+}
+
+.animateScale {
+  animation: scale-in var(--duration-slow) var(--ease-emphasized) both;
+}
+
+.animateFloat {
   animation: float-slow 8s ease-in-out infinite;
 }
 
+.animateRotate {
+  animation: rotate-slow 18s linear infinite;
+}
+
+.animatePulse {
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+.delay100 {
+  animation-delay: 100ms;
+}
+
+.delay200 {
+  animation-delay: 200ms;
+}
+
+.delay300 {
+  animation-delay: 300ms;
+}
+
+.delay400 {
+  animation-delay: 400ms;
+}
+
+.hoverLift {
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.hoverLift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.hoverGrow {
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.hoverGrow:hover {
+  transform: scale(1.02);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
   }
 }

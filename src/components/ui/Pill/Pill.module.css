@@ -1,0 +1,17 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 700;
+}

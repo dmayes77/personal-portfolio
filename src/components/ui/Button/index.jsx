@@ -1,9 +1,9 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cx } from "@/lib/utils";
 import styles from "./Button.module.css";
 
-const buttonVariants = cva(styles.button, {
+const buttonStyles = cva(styles.button, {
   variants: {
     variant: {
       default: styles.default,
@@ -34,10 +34,8 @@ export default function Button({
 
   return (
     <Component
-      className={cn(buttonVariants({ variant, size }), className)}
+      className={cx(buttonStyles({ variant, size }), className)}
       {...props}
     />
   );
 }
-
-export { buttonVariants };

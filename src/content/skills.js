@@ -1,15 +1,15 @@
 export const skills = [
   {
     category: "Frontend",
-    items: ["Next.js", "React", "JavaScript", "Tailwind CSS"],
+    items: ["Next.js", "React", "TypeScript", "CSS Modules"],
   },
   {
     category: "Backend",
-    items: ["Supabase", "Firebase"],
+    items: ["Supabase", "PostgreSQL", "Server Actions"],
   },
   {
     category: "Architecture",
-    items: ["App Router", "Server Components", "Server Actions", "REST APIs"],
+    items: ["App Router", "Server Components", "REST APIs", "Workflow Design"],
   },
   {
     category: "Developer Experience",

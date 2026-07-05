@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cx } from "@/lib/utils";
 import styles from "./ButtonGroup.module.css";
 
 export default function ButtonGroup({
@@ -8,7 +8,7 @@ export default function ButtonGroup({
 }) {
   return (
     <div
-      className={cn(styles.group, align === "center" && styles.center, className)}
+      className={cx(styles.group, align === "center" && styles.center, className)}
       role="group"
     >
       {children}

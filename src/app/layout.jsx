@@ -2,10 +2,22 @@ import "./globals.css";
 import "@/styles/tokens.css";
 import "@/styles/typography.css";
 import "@/styles/animations.css";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
+import "@/styles/utilities.css";
+import SiteShell from "@/components/layout/SiteShell";
+import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import { absoluteUrl, siteConfig } from "@/lib/constants";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata = {
   metadataBase: new URL(absoluteUrl("/")),
@@ -45,16 +57,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className="dark h-full scroll-smooth"
+      className={`dark ${manrope.variable} ${ibmPlexMono.variable}`}
       suppressHydrationWarning
     >
       <body>
         <ThemeProvider>
-          <div className="site-shell">
-            <Header />
-            {children}
-            <Footer />
-          </div>
+          <SiteShell>{children}</SiteShell>
         </ThemeProvider>
       </body>
     </html>

@@ -1,0 +1,11 @@
+.stack {
+  display: grid;
+}
+
+.gapMd {
+  gap: 1rem;
+}
+
+.gapLg {
+  gap: 1.5rem;
+}

@@ -18,7 +18,6 @@
   font-size: 0.875rem;
   color: var(--muted-foreground);
   line-height: inherit;
-  max-width: 28rem;
 }
 
 .nameLink {
@@ -36,33 +35,10 @@
   border-radius: 2px;
 }
 
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.link {
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
+.note {
   font-size: 0.875rem;
   color: var(--muted-foreground);
-  background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
-  transition:
-    color 150ms ease,
-    background-color 150ms ease,
-    transform 150ms ease;
-}
-
-.link:hover {
-  color: var(--foreground);
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  transform: translateY(-1px);
-}
-
-.link:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  text-align: right;
 }
 
 @media (max-width: 599px) {
@@ -70,5 +46,9 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+
+  .note {
+    text-align: left;
   }
 }

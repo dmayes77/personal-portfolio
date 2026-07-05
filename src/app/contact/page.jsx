@@ -2,9 +2,9 @@ import Container from "@/components/layout/Container";
 import PageHero from "@/components/layout/PageHero";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button";
+import Card, { CardHeader } from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import { siteConfig, socialLinks } from "@/lib/constants";
-import primitives from "@/styles/primitives.module.css";
 import { submitContactForm } from "./actions";
 import styles from "./contact.module.css";
 
@@ -18,7 +18,7 @@ export default async function ContactPage({ searchParams }) {
   const { status } = await searchParams;
 
   return (
-    <main id="main-content">
+    <>
       <PageHero
         id="contact-hero"
         kicker="Contact"
@@ -29,10 +29,10 @@ export default async function ContactPage({ searchParams }) {
       <Section id="contact-body" spacing="roomy">
         <Container variant="large">
           <div className={styles.grid}>
-            <article className={primitives.card}>
-              <div className={primitives.cardHeading}>
+            <Card>
+              <CardHeader>
                 <h2>Send a message</h2>
-              </div>
+              </CardHeader>
 
               {status === "error" ? (
                 <p role="alert" className={styles.formError}>
@@ -61,12 +61,12 @@ export default async function ContactPage({ searchParams }) {
                   Send message
                 </Button>
               </form>
-            </article>
+            </Card>
 
-            <article className={primitives.card}>
-              <div className={primitives.cardHeading}>
+            <Card>
+              <CardHeader>
                 <h2>Let&apos;s connect</h2>
-              </div>
+              </CardHeader>
               <div className={styles.contactList}>
                 {socialLinks.map((item) => (
                   <a
@@ -89,10 +89,10 @@ export default async function ContactPage({ searchParams }) {
               <p className={styles.location}>
                 {siteConfig.location} — available for full-time remote opportunities.
               </p>
-            </article>
+            </Card>
           </div>
         </Container>
       </Section>
-    </main>
+    </>
   );
 }

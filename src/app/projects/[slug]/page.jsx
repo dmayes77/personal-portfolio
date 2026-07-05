@@ -5,8 +5,11 @@ import PageHero from "@/components/layout/PageHero";
 import Section from "@/components/layout/Section";
 import Button from "@/components/ui/Button";
 import ButtonGroup from "@/components/ui/ButtonGroup";
-import primitives from "@/styles/primitives.module.css";
-import Link from "next/link";
+import Card, { CardHeader } from "@/components/ui/Card";
+import CheckList from "@/components/ui/CheckList";
+import InlineLink from "@/components/ui/InlineLink";
+import Pill, { PillGroup } from "@/components/ui/Pill";
+import Stack from "@/components/ui/Stack";
 import styles from "./caseStudy.module.css";
 
 const proseSections = [
@@ -50,7 +53,7 @@ export default async function ProjectPage({ params }) {
   const hasLinks = project.links?.live || project.links?.github;
 
   return (
-    <main id="main-content">
+    <>
       <PageHero
         id="project-hero"
         kicker={project.category || `${project.year}`}
@@ -58,13 +61,11 @@ export default async function ProjectPage({ params }) {
         lede={project.tagline}
       >
         {project.tags?.length ? (
-          <div className={primitives.pillRow}>
+          <PillGroup>
             {project.tags.map((tag) => (
-              <span key={tag} className={primitives.pill}>
-                {tag}
-              </span>
+              <Pill key={tag}>{tag}</Pill>
             ))}
-          </div>
+          </PillGroup>
         ) : null}
 
         {hasLinks ? (
@@ -93,41 +94,39 @@ export default async function ProjectPage({ params }) {
 
       <Section id="project-body" spacing="roomy">
         <Container variant="medium">
-          <div className={primitives.stackLg}>
+          <Stack gap="lg">
             {proseSections
               .filter(({ key }) => project[key])
               .map(({ key, title }) => (
-                <article key={key} className={primitives.card}>
-                  <div className={primitives.cardHeading}>
+                <Card key={key}>
+                  <CardHeader>
                     <h2>{title}</h2>
-                  </div>
+                  </CardHeader>
                   <p className={styles.prose}>{project[key]}</p>
-                </article>
+                </Card>
               ))}
 
             {listSections
               .filter(({ key }) => project[key]?.length)
               .map(({ key, title }) => (
-                <article key={key} className={primitives.card}>
-                  <div className={primitives.cardHeading}>
+                <Card key={key}>
+                  <CardHeader>
                     <h2>{title}</h2>
-                  </div>
-                  <ul className={primitives.checkList} role="list">
+                  </CardHeader>
+                  <CheckList>
                     {project[key].map((item) => (
                       <li key={item}>{item}</li>
                     ))}
-                  </ul>
-                </article>
+                  </CheckList>
+                </Card>
               ))}
-          </div>
+          </Stack>
 
           <p className={styles.backLink}>
-            <Link href="/#featured-projects" className={primitives.inlineLink}>
-              ← Back to all projects
-            </Link>
+            <InlineLink href="/#featured-projects">← Back to all projects</InlineLink>
           </p>
         </Container>
       </Section>
-    </main>
+    </>
   );
 }

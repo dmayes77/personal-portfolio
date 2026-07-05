@@ -1,5 +1,7 @@
 :root {
   color-scheme: light;
+
+  /* colors */
   --background: #f2f6fd;
   --background-subtle: #e8effb;
   --surface: rgba(255, 255, 255, 0.88);
@@ -7,48 +9,118 @@
   --foreground: #0b1730;
   --muted-foreground: #4a5d7b;
   --border: rgba(11, 23, 48, 0.12);
+
   --accent: #1f63ff;
   --accent-strong: #0e4ed8;
   --accent-soft: rgba(31, 99, 255, 0.12);
   --accent-foreground: #ffffff;
   --spotlight: rgba(31, 99, 255, 0.18);
+
+  /* shadows */
   --shadow-soft: 0 24px 70px rgba(24, 57, 117, 0.1);
   --shadow-card: 0 16px 40px rgba(18, 46, 96, 0.14);
+
+  /* spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* layout */
   --nav-height: 5rem;
   --page-padding-x: 1rem;
   --container-full: 90rem;
   --container-large: 72rem;
   --container-medium: 60rem;
   --container-small: 48rem;
+  --content-measure: 68ch;
+  --grid-gap: clamp(1rem, 2vw, 1.5rem);
+
+  /* sections */
   --section-padding-compact: 3rem;
   --section-padding-default: 4rem;
   --section-padding-roomy: 5.5rem;
-  --font-sans: "Avenir Next Condensed", "Avenir Next", "Segoe UI", sans-serif;
-  --font-ui: "Avenir Next", "IBM Plex Sans", "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", "SFMono-Regular", "Consolas", monospace;
+
+  /* radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-pill: 999px;
+
+  /* typography */
+  --font-sans: var(--font-manrope), "Segoe UI", sans-serif;
+  --font-ui: var(--font-manrope), "Segoe UI", sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), "SFMono-Regular", "Consolas", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(2rem, 5vw, 4.75rem);
+  --text-display: clamp(3rem, 8vw, 7rem);
+
+  --leading-tight: 0.95;
+  --leading-snug: 1.15;
+  --leading-normal: 1.6;
+
+  --tracking-tight: -0.04em;
+  --tracking-wide: 0.08em;
+
+  /* glass */
+  --glass-blur: 18px;
+  --glass-border: 1px solid var(--border);
+
+  /* motion */
+  --duration-fast: 180ms;
+  --duration-normal: 280ms;
+  --duration-slow: 500ms;
+
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --float-distance: 10px;
+  --fade-distance: 18px;
 }
 
 .dark {
   color-scheme: dark;
-  --background: #040913;
-  --background-subtle: #09101d;
-  --surface: rgba(10, 18, 34, 0.78);
-  --surface-strong: rgba(13, 23, 42, 0.92);
-  --foreground: #f5f8ff;
-  --muted-foreground: #a9b9da;
-  --border: rgba(143, 176, 255, 0.16);
-  --accent: #5e90ff;
-  --accent-strong: #85b0ff;
-  --accent-soft: rgba(94, 144, 255, 0.18);
-  --accent-foreground: #041120;
-  --spotlight: rgba(94, 144, 255, 0.22);
-  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.4);
-  --shadow-card: 0 18px 44px rgba(0, 0, 0, 0.34);
+
+  --background: #030712;
+  --background-subtle: #07111f;
+
+  --surface: rgba(8, 17, 34, 0.76);
+  --surface-strong: rgba(12, 23, 44, 0.94);
+
+  --foreground: #f8fbff;
+  --muted-foreground: #9fb0d0;
+
+  --border: rgba(148, 180, 255, 0.16);
+
+  --accent: #4f8cff;
+  --accent-strong: #8fb8ff;
+  --accent-soft: rgba(79, 140, 255, 0.18);
+  --accent-foreground: #031225;
+
+  --spotlight: rgba(79, 140, 255, 0.24);
+
+  --shadow-soft: 0 28px 80px rgba(0, 0, 0, 0.46);
+  --shadow-card: 0 22px 55px rgba(0, 0, 0, 0.38);
+  --surface-glass: rgba(10, 20, 38, 0.64);
+  --surface-glow: rgba(79, 140, 255, 0.14);
+  --border-strong: rgba(148, 180, 255, 0.28);
 }
 
 @media (min-width: 768px) {
   :root {
-    --nav-height: 5.5rem;
     --page-padding-x: 1.5rem;
     --section-padding-compact: 3.5rem;
     --section-padding-default: 5rem;

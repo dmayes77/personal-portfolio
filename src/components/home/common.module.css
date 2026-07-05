@@ -1,0 +1,215 @@
+.lightSection {
+  position: relative;
+  background:
+    radial-gradient(circle at top, rgba(47, 111, 255, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(250, 252, 255, 0.98), rgba(243, 247, 255, 0.98));
+}
+
+.lightSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(47, 111, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(47, 111, 255, 0.035) 1px, transparent 1px);
+  background-size: 2.75rem 2.75rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28), transparent 72%);
+  pointer-events: none;
+}
+
+.bandCard {
+  display: grid;
+  gap: 1.4rem;
+  padding: 0.25rem 0 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.bandHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.bandHeader p {
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1152de;
+}
+
+.bandHeader::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(47, 111, 255, 0.42), transparent);
+}
+
+.sectionStack {
+  display: grid;
+  gap: 4rem;
+}
+
+.supportRow {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.supportPanel {
+  padding-top: 0.25rem;
+}
+
+.whyHireCopy {
+  color: #243656;
+  line-height: 1.72;
+}
+
+.sectionLead {
+  max-width: 42rem;
+  color: #314566;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.leadershipSummary {
+  color: #243656;
+  line-height: 1.72;
+  margin-top: 0.25rem;
+}
+
+.checkList {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.checkList li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: #20304d;
+  line-height: 1.6;
+}
+
+.checkList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.52rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: #2f6fff;
+  box-shadow: 0 0 0 0.2rem rgba(47, 111, 255, 0.12);
+}
+
+.checkColumns {
+  gap: 1rem 2rem;
+}
+
+.contactList {
+  display: grid;
+  gap: 1rem;
+}
+
+.contactItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.85rem 0;
+  color: #20304d;
+}
+
+.contactItem strong,
+.contactItem em {
+  display: block;
+}
+
+.contactItem strong {
+  font-size: 0.92rem;
+  color: #0d2454;
+}
+
+.contactItem em {
+  font-style: normal;
+  color: #4a628b;
+}
+
+.contactIcon {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #2f6fff;
+}
+
+.contactIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+:global(.dark) .lightSection {
+  background:
+    radial-gradient(circle at top, rgba(94, 144, 255, 0.1), transparent 42%),
+    linear-gradient(180deg, #050b15, #07111f 48%, #081424 100%);
+}
+
+:global(.dark) .lightSection::before {
+  background:
+    linear-gradient(90deg, rgba(94, 144, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(94, 144, 255, 0.035) 1px, transparent 1px);
+}
+
+:global(.dark) .bandCard {
+  border: none;
+  box-shadow: none;
+}
+
+:global(.dark) .bandHeader p {
+  color: #7ea9ff;
+}
+
+:global(.dark) .bandHeader::after {
+  background: linear-gradient(90deg, rgba(126, 169, 255, 0.45), transparent);
+}
+
+:global(.dark) .whyHireCopy,
+:global(.dark) .sectionLead,
+:global(.dark) .leadershipSummary,
+:global(.dark) .checkList li,
+:global(.dark) .contactItem,
+:global(.dark) .contactItem strong {
+  color: #d7e4ff;
+}
+
+:global(.dark) .contactItem em {
+  color: #a9b9da;
+}
+
+@media (min-width: 700px) {
+  .sectionStack {
+    gap: 4.5rem;
+  }
+
+  .supportRow {
+    grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
+    align-items: start;
+  }
+
+  .checkColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .sectionStack {
+    gap: 5rem;
+  }
+
+  .supportRow {
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  }
+}

@@ -1,17 +1,21 @@
 .compact {
   padding-block: var(--section-padding-compact);
+  scroll-margin-top: calc(var(--nav-height));
 }
 
 .default {
   padding-block: var(--section-padding-default);
+  scroll-margin-top: calc(var(--nav-height));
 }
 
 .roomy {
   padding-block: var(--section-padding-roomy);
+  scroll-margin-top: calc(var(--nav-height));
 }
 
 .hero {
   padding-block: 0;
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 .subtle {

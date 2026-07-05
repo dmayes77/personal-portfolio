@@ -10,7 +10,7 @@ export const clearpoint = {
     "Inspection workflows needed to move off spreadsheets and paper forms onto a scalable, mobile-ready platform that field teams would actually use.",
   status: "live",
   featured: true,
-  year: 2024,
+  year: 2025,
   thumbnail: "",
   tags: ["Next.js", "JavaScript", "Supabase"],
   summary:

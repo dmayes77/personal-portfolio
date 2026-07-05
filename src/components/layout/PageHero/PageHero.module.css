@@ -1,16 +1,59 @@
 .section {
   position: relative;
   overflow: clip;
+}
+
+.page {
   background:
     radial-gradient(circle at 26% 20%, rgba(43, 109, 255, 0.24), transparent 30%),
     linear-gradient(135deg, #040816 0%, #08101f 44%, #0c1830 100%);
   padding-block: clamp(3.5rem, 8vw, 5.5rem);
 }
 
+.showcase {
+  background:
+    radial-gradient(circle at 26% 20%, rgba(43, 109, 255, 0.26), transparent 28%),
+    radial-gradient(circle at 74% 22%, rgba(43, 109, 255, 0.24), transparent 22%),
+    linear-gradient(135deg, #040816 0%, #08101f 44%, #0c1830 100%);
+}
+
+.banner {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(43, 109, 255, 0.22), transparent 26%),
+    linear-gradient(135deg, #040816 0%, #08101f 44%, #0c1830 100%);
+}
+
 .inner {
   display: grid;
   gap: 1rem;
+}
+
+.innerPage {
   max-width: 42rem;
+}
+
+.innerShowcase {
+  position: relative;
+  gap: 1.5rem;
+  align-content: start;
+  max-width: var(--container-full);
+  margin-inline: auto;
+  padding-block: 1rem 1.75rem;
+  padding-inline: 1rem;
+}
+
+.innerBanner {
+  max-width: min(100%, 56rem);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+
+.screenHeight {
+  min-height: calc(100svh - var(--nav-height));
+}
+
+.intro {
+  display: grid;
+  gap: 1rem;
 }
 
 .kicker {
@@ -34,4 +77,19 @@
   font-size: 1.1rem;
   line-height: 1.6;
   color: rgba(235, 242, 255, 0.84);
+}
+
+@media (min-width: 700px) {
+  .innerShowcase {
+    padding-inline: clamp(1.25rem, 4vw, 2rem);
+    padding-block: 1.25rem 4rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .innerShowcase {
+    align-content: center;
+    padding-block: clamp(1.25rem, 3vw, 2rem);
+    padding-inline: clamp(1.25rem, 5vw, 4.5rem);
+  }
 }

@@ -1,0 +1,86 @@
+.editorialPanel {
+  gap: 1.4rem;
+  padding-top: 0.25rem;
+  max-width: 60rem;
+}
+
+.editorialPanel .bandHeader p,
+.valuesPanel .bandHeader p {
+  font-size: 0.86rem;
+  letter-spacing: 0.12em;
+}
+
+.aboutCopy {
+  display: grid;
+  gap: 1rem;
+}
+
+.aboutCopy p {
+  color: #243656;
+  line-height: 1.72;
+}
+
+.aboutCopy p:first-child {
+  max-width: 42rem;
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+  line-height: 1.28;
+  color: #10254f;
+}
+
+.aboutCopy p:last-child {
+  max-width: 46rem;
+}
+
+.cardDivider {
+  height: 1px;
+  background: rgba(12, 28, 64, 0.12);
+  margin: 0.5rem 0;
+}
+
+.strengthGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.strengthCard {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem 0 0;
+}
+
+.strengthCard h3 {
+  font-size: 1rem;
+  color: #1152de;
+}
+
+.strengthCard p {
+  color: #314566;
+  line-height: 1.6;
+}
+
+.valuesPanel {
+  max-width: 58rem;
+}
+
+:global(.dark) .aboutCopy p:first-child {
+  color: #f3f7ff;
+}
+
+:global(.dark) .aboutCopy p,
+:global(.dark) .strengthCard p {
+  color: #d7e4ff;
+}
+
+:global(.dark) .strengthCard h3 {
+  color: #7ea9ff;
+}
+
+:global(.dark) .cardDivider {
+  background: rgba(143, 176, 255, 0.12);
+}
+
+@media (min-width: 700px) {
+  .strengthGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

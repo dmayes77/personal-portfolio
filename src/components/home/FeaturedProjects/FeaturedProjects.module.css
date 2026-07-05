@@ -1,0 +1,183 @@
+.featuredProjectsPanel {
+  gap: 1.5rem;
+  padding-top: 0.75rem;
+}
+
+.featuredProjectsPanel .bandHeader {
+  align-items: end;
+}
+
+.featuredProjectsPanel .bandHeader p {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  letter-spacing: 0.08em;
+}
+
+.hirePanel {
+  align-content: start;
+  padding: 1.35rem;
+  border: 1px solid rgba(122, 196, 255, 0.18);
+  border-radius: 1.2rem;
+  background: linear-gradient(160deg, rgba(9, 28, 67, 0.96), rgba(16, 53, 118, 0.92));
+}
+
+.statementBlock {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+}
+
+.rolePillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.rolePill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #f3f7ff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.projectGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.projectCard {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0 0 1.25rem;
+  background: transparent;
+}
+
+.projectCard h2 {
+  font-size: 1.2rem;
+  line-height: 1.05;
+}
+
+.projectCard:first-child {
+  padding-bottom: 1.6rem;
+}
+
+.projectCard:first-child h2 {
+  font-size: clamp(1.55rem, 2vw, 2rem);
+}
+
+.projectMeta,
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.projectMeta span {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1152de;
+}
+
+.projectCard p {
+  color: #314566;
+}
+
+.projectSubtitle {
+  color: #1152de;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projectComplexity {
+  max-width: 42rem;
+  color: #5a6c8f;
+}
+
+.projectTags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(47, 111, 255, 0.08);
+  color: #1b3f9e;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.projectLink {
+  display: inline-flex;
+  width: fit-content;
+  color: #1152de;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.projectLink::after {
+  content: "↗";
+  margin-left: 0.4rem;
+  transition: transform 180ms ease;
+}
+
+.projectCard:hover .projectLink::after {
+  transform: translate(2px, -1px);
+}
+
+.hirePanel .bandHeader p,
+.hirePanel .whyHireCopy,
+.hirePanel .leadershipSummary,
+.hirePanel .checkList li {
+  color: #f3f7ff;
+}
+
+.hirePanel .bandHeader::after {
+  background: linear-gradient(90deg, rgba(122, 196, 255, 0.5), transparent);
+}
+
+.hirePanel .checkList li::before {
+  background: #7ac4ff;
+  box-shadow: 0 0 0 0.2rem rgba(122, 196, 255, 0.12);
+}
+
+:global(.dark) .hirePanel {
+  background: linear-gradient(150deg, rgba(8, 17, 33, 0.98), rgba(15, 42, 88, 0.94));
+  border: 1px solid rgba(126, 169, 255, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
+}
+
+:global(.dark) .projectCard p {
+  color: #a9b9da;
+}
+
+:global(.dark) .projectMeta span,
+:global(.dark) .projectLink {
+  color: #7ea9ff;
+}
+
+:global(.dark) .projectTags span {
+  background: rgba(94, 144, 255, 0.12);
+  color: #dbe7ff;
+}
+
+@media (min-width: 700px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .projectCard:first-child {
+    grid-column: 1 / -1;
+    padding-right: 12%;
+  }
+}

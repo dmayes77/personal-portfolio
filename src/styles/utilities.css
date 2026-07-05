@@ -1,0 +1,36 @@
+.container {
+  width: min(100% - calc(var(--page-padding-x) * 2), var(--container-large));
+  margin-inline: auto;
+}
+
+.containerFull {
+  width: min(100% - calc(var(--page-padding-x) * 2), var(--container-full));
+  margin-inline: auto;
+}
+
+.containerMedium {
+  width: min(100% - calc(var(--page-padding-x) * 2), var(--container-medium));
+  margin-inline: auto;
+}
+
+.containerSmall {
+  width: min(100% - calc(var(--page-padding-x) * 2), var(--container-small));
+  margin-inline: auto;
+}
+
+.surface {
+  border: var(--glass-border);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}

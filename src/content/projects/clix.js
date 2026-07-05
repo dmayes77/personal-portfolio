@@ -10,7 +10,7 @@ export const clix = {
     "A mobile vehicle care business needed a digital membership platform that matched their premium brand and made signing up frictionless on any device.",
   status: "live",
   featured: true,
-  year: 2023,
+  year: 2026,
   thumbnail: "",
   tags: ["Next.js", "Server Actions", "Responsive Design"],
   summary:

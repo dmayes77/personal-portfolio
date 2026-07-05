@@ -18,8 +18,8 @@ export default function Navigation() {
   }, [pathname]);
 
   const links = siteConfig.nav.map((item) => {
-    const isActive =
-      item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+    const isSectionLink = item.href.includes("#");
+    const isActive = !isSectionLink && (item.href === "/" ? pathname === "/" : pathname.startsWith(item.href));
 
     return (
       <Link

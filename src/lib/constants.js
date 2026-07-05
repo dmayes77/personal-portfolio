@@ -2,23 +2,23 @@ export const siteConfig = {
   name: "David Mayes",
   title: "David Mayes — Software Developer",
   description:
-    "Software developer focused on modern web applications, SaaS platforms, and scalable digital solutions.",
+    "Product-minded software developer focused on workflow-heavy applications, SaaS platforms, and modern web products.",
   url: "https://davidmayes.dev",
   locale: "en-US",
   ogImageTitle: "David Mayes",
   ogImageSubtitle: "Software Developer",
   nav: [
-    { href: "/", label: "Home" },
-    { href: "/resume", label: "Resume" },
-    { href: "/contact", label: "Contact" },
+    { href: "/#featured-projects", label: "Projects" },
+    { href: "/#about", label: "About" },
+    { href: "/#capabilities", label: "Capabilities" },
   ],
-  headerCta: {
-    href: "/contact",
-    label: "Get in touch",
-  },
   contactEmail: "dmayes77@gmail.com",
   location: "Chattanooga, TN",
-  footerLinks: [
+  resume: {
+    pageHref: "/resume",
+    pdfHref: "/resume/david-mayes-resume.pdf",
+  },
+  headerActions: [
     { label: "GitHub", href: "https://github.com/dmayes77", external: true },
     {
       label: "LinkedIn",
@@ -42,7 +42,7 @@ export const socialLinks = [
     href: `mailto:${siteConfig.contactEmail}`,
     icon: "mail",
   },
-  ...siteConfig.footerLinks
+  ...siteConfig.headerActions
     .filter((link) => socialIconByLabel[link.label])
     .map((link) => ({
       label: link.label,

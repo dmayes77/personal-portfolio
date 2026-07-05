@@ -1,0 +1,24 @@
+.list {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.52rem;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 0.2rem var(--accent-soft);
+}

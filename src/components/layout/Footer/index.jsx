@@ -15,20 +15,7 @@ export default function Footer() {
             {siteConfig.name}
           </Link>
         </p>
-        <nav className={styles.nav} aria-label="Footer navigation">
-          {siteConfig.footerLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={styles.link}
-              {...(link.external
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <p className={styles.note}>Built with a UX-first, systems-minded approach.</p>
       </Container>
     </footer>
   );
