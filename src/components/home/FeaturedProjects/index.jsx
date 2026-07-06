@@ -101,10 +101,10 @@ export default function FeaturedProjects() {
                 ))}
               </ul>
               <ButtonGroup>
-                <Button asChild size="lg">
+                <Button asChild>
                   <Link href="/contact">Let&apos;s Connect</Link>
                 </Button>
-                <Button asChild variant="secondary" size="lg">
+                <Button asChild variant="secondary">
                   <Link href="/resume">View Resume</Link>
                 </Button>
               </ButtonGroup>

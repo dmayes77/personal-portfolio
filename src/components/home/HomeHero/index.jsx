@@ -64,10 +64,10 @@ export default function HomeHero() {
         </div>
 
         <ButtonGroup className={styles.heroActions}>
-          <Button asChild size="lg" className={styles.heroButton}>
+          <Button asChild className={styles.heroButton}>
             <Link href="/#featured-projects">View My Projects</Link>
           </Button>
-          <Button asChild variant="secondary" size="lg" className={styles.heroButton}>
+          <Button asChild variant="secondary" className={styles.heroButton}>
             <Link href="/contact">Let&apos;s Connect</Link>
           </Button>
         </ButtonGroup>

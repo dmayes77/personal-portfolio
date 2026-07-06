@@ -74,12 +74,12 @@ export default function ResumePrompt() {
             </div>
 
             <div className={styles.actions}>
-              <Button asChild size="lg">
+              <Button asChild>
                 <Link href={siteConfig.resume.pageHref} onClick={() => setOpen(false)}>
                   View Resume
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild variant="secondary">
                 <a href={siteConfig.resume.pdfHref} download onClick={() => setOpen(false)}>
                   Download PDF
                 </a>

@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }) {
               ) : null}
               {project.links.github ? (
                 <ButtonGroup>
-                  <Button asChild variant="secondary" size="lg">
+                  <Button asChild variant="secondary">
                     <a
                       href={project.links.github}
                       target="_blank"
@@ -112,7 +112,7 @@ export default async function ProjectPage({ params }) {
 
                 {project.links.live ? (
                   <div className={styles.heroActions}>
-                    <Button asChild size="lg">
+                    <Button asChild>
                       <a
                         href={project.links.live}
                         target="_blank"

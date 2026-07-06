@@ -33,12 +33,12 @@ export default function ResumePage() {
         lede="Full-Stack Software Engineer with 10+ years building production-ready web applications and SaaS platforms, plus leadership experience managing approximately 105 associates."
       >
         <ButtonGroup>
-          <Button asChild size="lg">
+          <Button asChild>
             <a href={siteConfig.resume.pdfHref} download>
               Download PDF Resume
             </a>
           </Button>
-          <Button asChild variant="secondary" size="lg">
+          <Button asChild variant="secondary">
             <Link href="/contact">Get in touch</Link>
           </Button>
         </ButtonGroup>
@@ -152,12 +152,12 @@ export default function ResumePage() {
           <div className={styles.cta}>
             <p>Need the PDF version or want to talk through fit, projects, or full work history?</p>
             <ButtonGroup>
-              <Button asChild size="lg">
+              <Button asChild>
                 <a href={siteConfig.resume.pdfHref} download>
                   Download PDF
                 </a>
               </Button>
-              <Button asChild variant="secondary" size="lg">
+              <Button asChild variant="secondary">
                 <Link href="/contact">Get in touch</Link>
               </Button>
             </ButtonGroup>

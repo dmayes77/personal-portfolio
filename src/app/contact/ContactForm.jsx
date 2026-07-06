@@ -20,7 +20,7 @@ const initialFields = {
 
 function SubmitButton() {
   return (
-    <Button type="submit" size="lg" className={styles.submit}>
+    <Button type="submit" className={styles.submit}>
       Send message
     </Button>
   );
@@ -126,7 +126,6 @@ export default function ContactForm({ action }) {
             <div className={styles.actions}>
               <Button
                 type="button"
-                size="lg"
                 onClick={() => {
                   setFields(initialFields);
                   setHideSuccess(true);
