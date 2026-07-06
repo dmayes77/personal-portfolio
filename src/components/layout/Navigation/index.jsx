@@ -33,6 +33,17 @@ export default function Navigation() {
     );
   });
 
+  const mobileActionLinks = siteConfig.headerActions.map((item) => (
+    <Link
+      key={item.label}
+      href={item.href}
+      className={styles.link}
+      {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
+      {item.label}
+    </Link>
+  ));
+
   return (
     <>
       <nav className={styles.nav} aria-label="Primary navigation">
@@ -45,6 +56,8 @@ export default function Navigation() {
         </summary>
         <nav className={styles.mobileList} aria-label="Primary navigation">
           {links}
+          <div className={styles.mobileDivider} aria-hidden="true" />
+          {mobileActionLinks}
         </nav>
       </details>
     </>

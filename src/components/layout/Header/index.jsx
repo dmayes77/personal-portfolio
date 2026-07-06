@@ -26,7 +26,8 @@ export default function Header() {
           href="/#hero"
           aria-label={`${siteConfig.name} — home`}
         >
-          {siteConfig.name}
+          <span className={styles.brandFull}>{siteConfig.name}</span>
+          <span className={styles.brandShort}>DM</span>
         </Link>
 
         <Navigation />

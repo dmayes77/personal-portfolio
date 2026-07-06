@@ -84,11 +84,18 @@
   background: var(--surface-strong);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-card);
+  overflow-x: clip;
 }
 
 .mobileList .link {
   display: block;
   width: 100%;
+}
+
+.mobileDivider {
+  height: 1px;
+  margin: 0.35rem 0;
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
 }
 
 @media (max-width: 899px) {
