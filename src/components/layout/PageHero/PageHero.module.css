@@ -28,11 +28,6 @@
   gap: 1rem;
 }
 
-.content {
-  display: grid;
-  gap: 1rem;
-}
-
 .innerPage {
   max-width: 42rem;
 }
@@ -59,17 +54,6 @@
 .intro {
   display: grid;
   gap: 1rem;
-}
-
-.copy {
-  display: grid;
-  gap: 1rem;
-}
-
-.contentWithAside .copy,
-.contentWithAside .intro,
-.contentWithAside .lede {
-  max-width: none;
 }
 
 .kicker {
@@ -103,12 +87,6 @@
 }
 
 @media (min-width: 960px) {
-  .contentWithAside {
-    grid-template-columns: minmax(0, 1fr) minmax(30rem, 42vw);
-    align-items: start;
-    gap: clamp(1.5rem, 4vw, 3rem);
-  }
-
   .innerShowcase {
     align-content: center;
     padding-block: clamp(1.25rem, 3vw, 2rem);

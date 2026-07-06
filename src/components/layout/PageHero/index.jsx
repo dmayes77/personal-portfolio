@@ -41,7 +41,6 @@ export default function PageHero({
   title,
   lede,
   children,
-  aside,
   className,
   containerVariant = "large",
   height,
@@ -58,19 +57,14 @@ export default function PageHero({
     >
       <Container variant={containerVariant}>
         <div className={cx(innerVariants({ variant, height }), innerClassName)}>
-          <div className={cx(styles.content, aside ? styles.contentWithAside : null)}>
-            <div className={styles.copy}>
-              {hasIntro ? (
-                <div className={styles.intro}>
-                  {kicker ? <p className={styles.kicker}>{kicker}</p> : null}
-                  {title ? <h1 className={styles.title}>{title}</h1> : null}
-                  {lede ? <p className={styles.lede}>{lede}</p> : null}
-                </div>
-              ) : null}
-              {children}
+          {hasIntro ? (
+            <div className={styles.intro}>
+              {kicker ? <p className={styles.kicker}>{kicker}</p> : null}
+              {title ? <h1 className={styles.title}>{title}</h1> : null}
+              {lede ? <p className={styles.lede}>{lede}</p> : null}
             </div>
-            {aside ? <div className={styles.aside}>{aside}</div> : null}
-          </div>
+          ) : null}
+          {children}
         </div>
       </Container>
     </Section>

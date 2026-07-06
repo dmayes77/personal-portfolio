@@ -20,7 +20,7 @@ export default function Header() {
       <a href="#main-content" className={styles.skipLink}>
         Skip to content
       </a>
-      <Container className={styles.inner} variant="large">
+      <Container className={styles.inner} variant="full">
         <Link
           className={styles.brandMark}
           href="/#hero"
