@@ -82,19 +82,6 @@ export default async function ProjectPage({ params }) {
                   ))}
                 </PillGroup>
               ) : null}
-              {project.links.github ? (
-                <ButtonGroup>
-                  <Button asChild variant="secondary">
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      View code
-                    </a>
-                  </Button>
-                </ButtonGroup>
-              ) : null}
             </div>
 
             {project.thumbnail ? (
@@ -110,17 +97,32 @@ export default async function ProjectPage({ params }) {
                   />
                 </div>
 
-                {project.links.live ? (
+                {project.links.live || project.links.github ? (
                   <div className={styles.heroActions}>
-                    <Button asChild>
-                      <a
-                        href={project.links.live}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        View live
-                      </a>
-                    </Button>
+                    <ButtonGroup>
+                      {project.links.live ? (
+                        <Button asChild>
+                          <a
+                            href={project.links.live}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            View live
+                          </a>
+                        </Button>
+                      ) : null}
+                      {project.links.github ? (
+                        <Button asChild variant="secondary">
+                          <a
+                            href={project.links.github}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            View GitHub
+                          </a>
+                        </Button>
+                      ) : null}
+                    </ButtonGroup>
                   </div>
                 ) : null}
               </div>
