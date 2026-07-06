@@ -20,6 +20,22 @@ pnpm dev
 
 Open `http://localhost:3000`.
 
+Create a `.env.local` file for the contact form:
+
+```bash
+RESEND_API_KEY=your_resend_api_key
+CONTACT_FORM_FROM_EMAIL="Portfolio Contact <onboarding@resend.dev>"
+CONTACT_FORM_TO_EMAIL=dmayes77@gmail.com
+```
+
+`CONTACT_FORM_FROM_EMAIL` must be a sender Resend allows for your account. The
+default `onboarding@resend.dev` sender is fine for testing, but for production
+you should switch it to a verified domain you control.
+
+The contact form uses Vercel BotID plus a honeypot field to help block bot
+submissions. BotID is configured in `src/instrumentation-client.js` and checked
+server-side in `src/app/contact/actions.js`.
+
 ## Project shape
 
 ```text

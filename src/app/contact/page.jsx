@@ -1,11 +1,11 @@
 import Container from "@/components/layout/Container";
 import PageHero from "@/components/layout/PageHero";
 import Section from "@/components/layout/Section";
-import Button from "@/components/ui/Button";
 import Card, { CardHeader } from "@/components/ui/Card";
 import Icon from "@/components/ui/Icon";
 import { siteConfig, socialLinks } from "@/lib/constants";
 import { submitContactForm } from "./actions";
+import ContactForm from "./ContactForm";
 import styles from "./contact.module.css";
 
 export const metadata = {
@@ -14,9 +14,7 @@ export const metadata = {
     "Get in touch with David Mayes about full-time remote product engineering roles.",
 };
 
-export default async function ContactPage({ searchParams }) {
-  const { status } = await searchParams;
-
+export default async function ContactPage() {
   return (
     <>
       <PageHero
@@ -33,34 +31,7 @@ export default async function ContactPage({ searchParams }) {
               <CardHeader>
                 <h2>Send a message</h2>
               </CardHeader>
-
-              {status === "error" ? (
-                <p role="alert" className={styles.formError}>
-                  Please fill in your name, email, and message before
-                  sending.
-                </p>
-              ) : null}
-
-              <form action={submitContactForm} className={styles.form}>
-                <div className={styles.field}>
-                  <label htmlFor="name">Name</label>
-                  <input id="name" name="name" type="text" required />
-                </div>
-
-                <div className={styles.field}>
-                  <label htmlFor="email">Email</label>
-                  <input id="email" name="email" type="email" required />
-                </div>
-
-                <div className={styles.field}>
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" name="message" rows={6} required />
-                </div>
-
-                <Button type="submit" size="lg" className={styles.submit}>
-                  Send message
-                </Button>
-              </form>
+              <ContactForm action={submitContactForm} />
             </Card>
 
             <Card>
