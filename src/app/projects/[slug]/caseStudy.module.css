@@ -1,8 +1,326 @@
+.heroSection {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(43, 109, 255, 0.22), transparent 26%),
+    linear-gradient(135deg, #040816 0%, #08101f 44%, #0c1830 100%);
+  padding-block: 3rem;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.heroCopy {
+  display: grid;
+  gap: 1rem;
+}
+
+.heroKicker {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(244, 248, 255, 0.82);
+}
+
+.heroTitle {
+  font-size: 2.1rem;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.heroLede {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(235, 242, 255, 0.84);
+}
+
+.heroMedia {
+  display: grid;
+  gap: 1rem;
+}
+
+.heroVisual {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, rgba(122, 169, 255, 0.35) 40%, transparent);
+  border-radius: 1.25rem;
+  background: rgba(4, 8, 22, 0.72);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+}
+
+.spotlightStrip {
+  display: grid;
+  gap: 1rem;
+  padding-bottom: clamp(1.75rem, 4vw, 2.5rem);
+  padding-inline: 0.35rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.spotlightItem {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.spotlightLabel {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.spotlightValue {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.bodyGrid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.storyColumn {
+  display: grid;
+  gap: 0;
+}
+
+.storySection {
+  display: grid;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  padding-inline: 0.35rem;
+  border-top: 1px solid var(--border);
+}
+
+.storySection:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.storyLabel {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.storyContent {
+  max-width: 48rem;
+}
+
+.sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.sidePanel {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--border));
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+.sideEyebrow,
+.sectionHeading p {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sideHighlight {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--foreground);
+}
+
+.sideCopy {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+.compactList {
+  gap: 0.75rem;
+}
+
+.panelSection {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.sectionHeading {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.sectionHeading h2 {
+  font-size: 1.45rem;
+  line-height: 1.14;
+  color: var(--foreground);
+}
+
+.detailRows {
+  display: grid;
+  gap: 1rem;
+}
+
+.detailRow {
+  display: grid;
+  gap: 1.1rem;
+  padding-block: 1.25rem;
+  padding-inline: 0.35rem;
+  border-top: 1px solid var(--border);
+}
+
+.detailRow:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.detailMeta {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.detailIndex {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.detailMeta h3 {
+  font-size: 1.02rem;
+  color: var(--foreground);
+}
+
 .prose {
   color: var(--muted-foreground);
   line-height: 1.7;
 }
 
 .backLink {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  padding-inline: 0.35rem;
+}
+
+@media (min-width: 700px) {
+  .heroSection {
+    padding-block: 4rem;
+  }
+
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+
+  .heroLede {
+    font-size: 1.06rem;
+  }
+
+  .sectionHeading h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .heroSection {
+    padding-block: 5.5rem;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.3fr) minmax(0, 0.7fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  .heroTitle {
+    font-size: 3.8rem;
+    line-height: 1.02;
+  }
+
+  .heroLede {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .sideHighlight {
+    font-size: 1.15rem;
+  }
+
+  .sectionHeading h2 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .detailMeta h3 {
+    font-size: 1.1rem;
+  }
+
+  .spotlightStrip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding-inline: 0;
+  }
+
+  .spotlightItem {
+    padding-right: 1.5rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .spotlightItem:last-child {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .bodyGrid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.55fr);
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .storySection,
+  .detailRow,
+  .backLink {
+    padding-inline: 0;
+  }
+
+  .sidePanel {
+    padding: 0 0 0 1.1rem;
+    border: none;
+    border-left: 2px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .detailRow {
+    grid-template-columns: minmax(13rem, 0.38fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
 }

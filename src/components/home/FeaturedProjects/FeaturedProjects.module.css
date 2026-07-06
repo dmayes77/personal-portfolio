@@ -58,6 +58,19 @@
   background: transparent;
 }
 
+.projectImageWrap {
+  overflow: hidden;
+  border: 1px solid rgba(17, 82, 222, 0.12);
+  border-radius: 1rem;
+  background: #07111f;
+}
+
+.projectImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .projectCard h2 {
   font-size: 1.2rem;
   line-height: 1.05;
@@ -124,6 +137,16 @@
   letter-spacing: 0.03em;
 }
 
+.projectStatus {
+  display: inline-flex;
+  width: fit-content;
+  color: #6f7f9d;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
 .projectLink::after {
   content: "↗";
   margin-left: 0.4rem;
@@ -163,6 +186,10 @@
 :global(.dark) .projectMeta span,
 :global(.dark) .projectLink {
   color: #7ea9ff;
+}
+
+:global(.dark) .projectStatus {
+  color: #8fa3c8;
 }
 
 :global(.dark) .projectTags span {

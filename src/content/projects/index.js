@@ -3,7 +3,7 @@ import { clearpoint } from "./clearpoint";
 import { clix } from "./clix";
 import { inspectos } from "./inspectos";
 
-export const projects = [clientflow, clearpoint, clix, inspectos];
+export const projects = [clix, clientflow, clearpoint, inspectos];
 
 export const featuredProjects = projects.filter((p) => p.featured);
 

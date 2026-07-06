@@ -7,6 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 import { leadershipPoints, targetRoles } from "@/content/home";
 import { featuredProjects } from "@/content/projects";
 import { cx } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./FeaturedProjects.module.css";
 
@@ -27,6 +28,17 @@ export default function FeaturedProjects() {
               <div className={styles.projectGrid}>
                 {featuredProjects.map((project) => (
                   <article key={project.slug} className={styles.projectCard}>
+                    {project.thumbnail ? (
+                      <div className={styles.projectImageWrap}>
+                        <Image
+                          src={project.thumbnail}
+                          alt={`${project.title} screenshot`}
+                          width={3360}
+                          height={1500}
+                          className={styles.projectImage}
+                        />
+                      </div>
+                    ) : null}
                     <div className={styles.projectMeta}>
                       <span>{project.category}</span>
                       <span>{project.year}</span>
@@ -44,10 +56,15 @@ export default function FeaturedProjects() {
                         <span key={tag}>{tag}</span>
                       ))}
                     </div>
-                    {false && (
-                      <Link href={`/projects/${project.slug}`} className={styles.projectLink}>
+                    {project.caseStudyReady ? (
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className={styles.projectLink}
+                      >
                         View Project
                       </Link>
+                    ) : (
+                      <span className={styles.projectStatus}>Still in dev</span>
                     )}
                   </article>
                 ))}

@@ -10,8 +10,9 @@ export const clix = {
     "A mobile vehicle care business needed a digital membership platform that matched their premium brand and made signing up frictionless on any device.",
   status: "live",
   featured: true,
+  caseStudyReady: true,
   year: 2026,
-  thumbnail: "",
+  thumbnail: "/clix-mx-screenshot.jpeg",
   tags: ["Next.js", "Server Actions", "Responsive Design"],
   summary:
     "CLIX MX is a premium membership experience for a mobile vehicle care business. The project combines branding, conversion-focused UX, and responsive engineering so the digital experience supports the company’s positioning instead of undermining it.",
@@ -57,7 +58,7 @@ export const clix = {
     "Expanded local SEO and lead capture experiments",
   ],
   links: {
-    live: "",
+    live: "https://clix-ashen.vercel.app/mx",
     github: "",
   },
 };
