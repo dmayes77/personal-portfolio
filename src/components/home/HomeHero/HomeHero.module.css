@@ -315,6 +315,8 @@
     width: auto;
     max-width: fit-content;
     margin-inline: 0;
+    justify-self: start;
+    justify-content: start;
   }
 
   .heroTechItem {
