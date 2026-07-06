@@ -17,9 +17,6 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <a href="#main-content" className={styles.skipLink}>
-        Skip to content
-      </a>
       <Container className={styles.inner} variant="full">
         <Link
           className={styles.brandMark}
