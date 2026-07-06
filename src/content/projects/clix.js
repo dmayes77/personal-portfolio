@@ -59,6 +59,6 @@ export const clix = {
   ],
   links: {
     live: "https://clix-ashen.vercel.app/mx",
-    github: "",
+    github: "https://github.com/dmayes77/CLIX",
   },
 };
